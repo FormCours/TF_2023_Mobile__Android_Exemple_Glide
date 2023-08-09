@@ -5,12 +5,14 @@
     android:layout_height="match_parent"
     android:background="#F2CFFF"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".fragments.ExampleImageFragment">
 
     <ImageView
-        android:id="@+id/img_frag_exemple"
+        android:id="@+id/img_frag_example"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="300dp"
+        android:contentDescription="@string/img_desc_pokemon"
         />
 
 </LinearLayout>

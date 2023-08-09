@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">test_glide</string>
     <string name="title_screen">Chargement d\'une image</string>
+    <string name="img_desc_pokemon">Pokemon</string>
 </resources>
