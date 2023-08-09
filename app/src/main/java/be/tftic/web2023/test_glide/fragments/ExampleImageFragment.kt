@@ -12,6 +12,12 @@ import com.bumptech.glide.Glide
 
 class ExampleImageFragment : Fragment() {
 
+    // region Listener
+    fun interface OnClickTestButtonListener {
+        fun onClickTest(message : String)
+    }
+    // endregion
+
     private lateinit var binding : FragmentExampleImageBinding
 
     override fun onCreateView(
@@ -28,7 +34,20 @@ class ExampleImageFragment : Fragment() {
             .fitCenter()
             .into(binding.imgFragExample);
 
+        // Set listener on Button
+        binding.btnFragExampleTest.setOnClickListener { sendMessageToParent() }
+
         // Return View
         return binding.root
+    }
+
+    private fun sendMessageToParent() {
+
+        // Récuperation de l'activité parent (si celle-ci implemente l'interface Listener)
+        val parent = activity as? OnClickTestButtonListener
+
+        // Déclanchement de l'action dans le code de l'activité parent
+        parent?.onClickTest("J'adore pokemon ♥")
+
     }
 }
